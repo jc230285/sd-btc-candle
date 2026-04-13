@@ -1,0 +1,14 @@
+{
+  "name": "sd-btc-candle",
+  "version": "1.0.0",
+  "description": "Stream Deck plugin showing 7-day BTC/GBP candlestick chart",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "@elgato/streamdeck": "^2.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.0"
+  }
+}

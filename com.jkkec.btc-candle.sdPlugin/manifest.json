@@ -1,0 +1,39 @@
+{
+  "Name": "BTC Candle",
+  "Version": "1.0.0",
+  "Author": "jkkec",
+  "Description": "7-day BTC/GBP candlestick chart with live price",
+  "Icon": "imgs/plugin",
+  "CodePath": "bin/plugin.js",
+  "Category": "Crypto",
+  "CategoryIcon": "imgs/plugin",
+  "UUID": "com.jkkec.btc-candle",
+  "SDKVersion": 2,
+  "Software": {
+    "MinimumVersion": "6.5"
+  },
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Nodejs": {
+    "Version": "20",
+    "Debug": "enabled"
+  },
+  "Actions": [
+    {
+      "Name": "BTC 7D Candle",
+      "UUID": "com.jkkec.btc-candle.chart",
+      "Icon": "imgs/actions/candle/icon",
+      "Tooltip": "7-day BTC/GBP candlestick chart with price",
+      "States": [
+        {
+          "Image": "imgs/actions/candle/icon",
+          "TitleAlignment": "middle"
+        }
+      ]
+    }
+  ]
+}
