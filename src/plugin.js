@@ -47,15 +47,13 @@ function toDailyCandles(ohlc) {
 }
 
 function formatPrice(p) {
-  if (p >= 100000) return (p / 1000).toFixed(0) + "k";
-  if (p >= 10000) return (p / 1000).toFixed(1) + "k";
-  return p.toFixed(0);
+  return Math.round(p).toLocaleString("en-GB");
 }
 
 function buildSvg(candles, price) {
   const W = 144;
   const H = 144;
-  const padTop = 32;
+  const padTop = 26;
   const padBot = 8;
   const padLR = 8;
 
@@ -85,11 +83,9 @@ function buildSvg(candles, price) {
   let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
   <rect width="${W}" height="${H}" fill="#000" rx="12"/>`;
 
-  // Price text at top
-  svg += `<text x="${W / 2}" y="14" text-anchor="middle" dominant-baseline="central"
-    font-family="Arial,sans-serif" font-size="11" fill="#aaa">BTC/GBP</text>`;
-  svg += `<text x="${W / 2}" y="26" text-anchor="middle" dominant-baseline="central"
-    font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="${priceColor}">£${formatPrice(price)}</text>`;
+  // Price text at top - full width
+  svg += `<text x="${W / 2}" y="16" text-anchor="middle" dominant-baseline="central"
+    font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="${priceColor}" textLength="${W - 12}" lengthAdjust="spacing">£${formatPrice(price)}</text>`;
 
   // Candles
   for (let i = 0; i < candles.length; i++) {
