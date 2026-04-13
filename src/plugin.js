@@ -47,7 +47,7 @@ function toDailyCandles(ohlc) {
 }
 
 function formatPrice(p) {
-  return Math.round(p).toLocaleString("en-GB");
+  return (p / 1000).toFixed(1) + "k";
 }
 
 function buildSvg(candles, price) {
@@ -85,7 +85,7 @@ function buildSvg(candles, price) {
 
   // Price text at top - full width
   svg += `<text x="${W / 2}" y="16" text-anchor="middle" dominant-baseline="central"
-    font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="${priceColor}" textLength="${W - 12}" lengthAdjust="spacing">£${formatPrice(price)}</text>`;
+    font-family="Arial,sans-serif" font-size="22" font-weight="bold" fill="${priceColor}">${formatPrice(price)}</text>`;
 
   // Candles
   for (let i = 0; i < candles.length; i++) {
