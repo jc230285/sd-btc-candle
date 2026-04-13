@@ -53,7 +53,7 @@ function formatPrice(p) {
 function buildSvg(candles, price) {
   const W = 144;
   const H = 144;
-  const padTop = 34;
+  const padTop = 46;
   const padBot = 8;
   const padLR = 8;
 
@@ -84,7 +84,7 @@ function buildSvg(candles, price) {
   <rect width="${W}" height="${H}" fill="#000" rx="12"/>`;
 
   // Price text at top - full width
-  svg += `<text x="${W / 2}" y="16" text-anchor="middle" dominant-baseline="central"
+  svg += `<text x="${W / 2}" y="26" text-anchor="middle" dominant-baseline="central"
     font-family="Arial,sans-serif" font-size="32" font-weight="bold" fill="${priceColor}">${formatPrice(price)}</text>`;
 
   // Candles
